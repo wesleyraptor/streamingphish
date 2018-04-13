@@ -1,5 +1,4 @@
 # StreamingPhish
---------
 
 This is a utility that uses supervised machine learning to detect phishing domains from the Certificate Transparency log network. The firehose of domain names and SSL certificates are made available thanks to the certstream network (certstream.calidog.io). All of the data required for training the initial predictive model is included in this project as well.
 
@@ -10,7 +9,7 @@ Also included is a Jupyter notebook to help explain each step of the supervised 
 This application consists of three main components:
 
 1. Jupyter notebook
-  - Demonstrates how to train a phishing classifier from scratch.
+  - Demonstrates how to train a phishing classifier from start to finish.
 2. CLI utility
   - Trains classifiers and evaluates domains in manual mode or against the Certificate Transparency log network (via certstream).
 3. Database
@@ -36,19 +35,32 @@ DigitalOcean droplets, AWS instances, or other cloud-based VMs with at least 2GB
  sudo ./install_streamingphish.sh
 ```
 
-#### Initializing the Containers
+Installation via `install_streamingphish.sh` is strongly encouraged. This routine will build the containers and run them in detached mode (running in the background). The output should appear as follows:
 
 ```
-  sudo docker-compose up -d
-```
-
-This routine will build the containers and run them in detached mode (running in the background). Successful initialization should look like something like this:
-
-```
-Successfully tagged phish-cli:latest
 Creating wes_notebook_1 ... done
 Creating wes_db_1       ... done
 Creating wes_cli_1      ... done
+
+[+] Successfully built and ran the application in daemon mode.
+
+There are 3 services embedded within this application:
+ - db
+ - cli
+ - notebook
+
+Primary actions:
+  1. The Jupyter notebook is currently available at <your_servers_ip_address>:9000.
+  2. Run streamingphish CLI utility:
+      $ docker-compose exec cli streamingphish
+
+Secondary actions:
+  View service state:
+   $ docker-compose ps
+  Stop all daemon services:
+   $ docker-compose down
+  Rebuild application and restart services after updating source code:
+    $ docker-compose up -d --build
 ```
 
 ## Operations
