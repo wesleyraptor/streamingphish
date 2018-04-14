@@ -23,9 +23,10 @@ The BASH script **install_streamingphish.sh** performs automatic installation on
 
 - Centos 7
 - Ubuntu 16.04
+- Debian 9.4
 - Fedora 27
 
-DigitalOcean droplets, AWS instances, or other cloud-based VMs with at least 2GBs of RAM should do the trick. 
+DigitalOcean droplets, AWS instances, or other cloud-based VMs with at least 2GBs of RAM should do the trick.
 
 #### Installation
 
@@ -62,6 +63,12 @@ Secondary actions:
   Rebuild application and restart services after updating source code:
     $ docker-compose up -d --build
 ```
+
+Installation on Mac OSX, though not officially supported, should work if docker and docker-compose are already installed. Run the following command to build and start the containers:
+
+```
+ sudo docker-compose up -d
+ ```
 
 ## Operations
 
