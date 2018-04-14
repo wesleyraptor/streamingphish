@@ -1,0 +1,32 @@
+certstream:
+  colors: true
+  include_issuer_ca_name: true
+  include_log_source: false
+  include_root_ca_name: false
+  include_seen_timestamp: false
+classifier:
+  active: final
+data:
+  benign_dir: /opt/streamingphish/training_data/benign/
+  fqdn_keywords_dir: /opt/streamingphish/training_data/fqdn_keywords/
+  keywords_dir: /opt/streamingphish/training_data/keywords/
+  malicious_dir: /opt/streamingphish/training_data/malicious/
+  similarity_words_dir: /opt/streamingphish/training_data/similarity_words/
+  targeted_brands_dir: /opt/streamingphish/training_data/targeted_brands/
+  tld_dir: /opt/streamingphish/training_data/tlds/
+logging:
+  enabled: true
+  path: /opt/streamingphish/predictions/
+logging_tiers:
+  high:
+    color: red
+    threshold: 0.9
+  low:
+    color: cyan
+    threshold: 0.6
+  suspicious:
+    color: yellow
+    threshold: 0.75
+system:
+  log_path: /opt/streamingphish/system/
+version: 1

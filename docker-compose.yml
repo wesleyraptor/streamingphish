@@ -1,0 +1,30 @@
+version: '3'
+services:
+  notebook:
+    image: phish-notebook
+    build:
+      context: jupyter/
+    volumes:
+      - "./training_data:/opt/streamingphish/training_data/"
+      - "./jupyter/notebooks:/opt/streamingphish/notebooks/"
+    ports:
+      - "9000:9000"
+  db:
+    image: phish-db
+    build:
+      context: db/
+    ports:
+      - "27017:27017"
+  cli:
+    image: phish-cli
+    build:
+      context: cli/
+    volumes:
+      - "./training_data:/opt/streamingphish/training_data/"
+      - "./predictions:/opt/streamingphish/predictions/"
+      - "./system:/opt/streamingphish/system/"
+      - "./cli/config:/opt/streamingphish/config/"
+
+volumes:
+  training_data:
+  notebooks:
