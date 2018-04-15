@@ -35,15 +35,21 @@ DigitalOcean droplets, AWS instances, or other cloud-based VMs with at least 2GB
  cd streamingphish/
  sudo ./install_streamingphish.sh
 ```
+##### Linux
 
-Installation via `install_streamingphish.sh` is strongly encouraged. This routine will build the containers and run them in detached mode (running in the background). The output should appear as follows:
+Use the `install_streamingphish.sh` script to install on Linux platforms. This routine will build the containers and run them in detached mode (running in the background). The output should appear as follows:
 
 ```
-Creating wes_notebook_1 ... done
-Creating wes_db_1       ... done
-Creating wes_cli_1      ... done
+Creating home_notebook_1 ... done
+Creating home_db_1       ... done
+Creating home_cli_1      ... done
 
-[+] Successfully built and ran the application in daemon mode.
+[+] Successfully built and started the applications in daemon mode.
+
+I suggest adding your user to the docker group so you don't have to use sudo each time, like this:
+   $ sudo usermod -aG docker $(whoami)
+
+You'll have to logout and log back in for the changes to take effect.
 
 There are 3 services embedded within this application:
  - db
@@ -53,18 +59,14 @@ There are 3 services embedded within this application:
 Primary actions:
   1. The Jupyter notebook is currently available at <your_servers_ip_address>:9000.
   2. Run streamingphish CLI utility:
-      $ docker-compose exec cli streamingphish
+   $ docker-compose exec cli streamingphish
 
-Secondary actions:
-  View service state:
-   $ docker-compose ps
-  Stop all daemon services:
-   $ docker-compose down
-  Rebuild application and restart services after updating source code:
-    $ docker-compose up -d --build
+See the Github README for further instructions on starting/stopping services, rebuilding the containers, etc.
 ```
 
-Installation on Mac OSX, though not officially supported, should work if docker and docker-compose are already installed. Run the following command to build and start the containers:
+##### Windows or Mac OSX
+
+Installation on other platforms works if docker and docker-compose are already installed. Run the following command to build and start the containers:
 
 ```
  sudo docker-compose up -d
@@ -119,7 +121,7 @@ Please make a selection [1-6]:
 
 #### Training a Classifier
 
-The system doesn't include any trained classifiers by default - to start, select option 4 to train one. The metrics from the trained classifier will be printed to the screen as soon as training is complete (and FYI if you're unfamiliar with what the metrics mean, take a look at the accompanying Jupyter notebook). Continue following the instructions to save the classifier, give it a name, and activate it:
+The system doesn't include any trained classifiers by default, so select option 4 to train one. The metrics from the trained classifier will be printed to the screen as soon as training is complete (and FYI if you're unfamiliar with what the metrics mean, take a look at the accompanying Jupyter notebook). Continue following the instructions to save the classifier, give it a name, and activate it:
 
 ```
 Please make a selection [1-6]: 4
