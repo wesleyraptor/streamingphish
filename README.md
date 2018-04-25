@@ -60,7 +60,7 @@ Each segment has been functionally decomposed into its own Docker container. The
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for further details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for further details.
 
 ## Resources/Acknowledgments
 
