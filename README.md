@@ -21,13 +21,31 @@ Each segment has been functionally decomposed into its own Docker container. The
 
 ## Install and Operational Instructions
 
-[Visit the wiki section](https://github.com/wesleyraptor/streamingphish/wiki) for detailed instructions on how to install and use the Jupyter notebook and CLU utility. Wiki pages for specific topics are listed below as well.
-
 - [Setup and Install](https://github.com/wesleyraptor/streamingphish/wiki/Setup-and-Install)
+  - [Prerequisites](https://github.com/wesleyraptor/streamingphish/wiki/Setup-and-Install#prerequisites)
+  - [Installation](https://github.com/wesleyraptor/streamingphish/wiki/Setup-and-Install#installation)
+    - [Linux](https://github.com/wesleyraptor/streamingphish/wiki/Setup-and-Install#linux)
+    - [Windows or Mac OSX](https://github.com/wesleyraptor/streamingphish/wiki/Setup-and-Install#windows-or-mac-osx)
 - [Jupyter Notebook](https://github.com/wesleyraptor/streamingphish/wiki/Jupyter-Notebook)
 - [CLI Utility](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility)
-  - [Training and Retraining Classifiers](https://github.com/wesleyraptor/streamingphish/wiki/Training-and-Retraining)
-  - [Classifier Management](https://github.com/wesleyraptor/streamingphish/wiki/Classifier-Management)
+  - [Running against CertStream](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#running-against-certstream)
+  - [Running in Manual Mode](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#running-in-manual-mode)
+  - [Classifier Management](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#classifier-management)
+    - [Accuracy Metrics - All Trained Classifiers](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#accuracy-metrics---all-trained-classifiers)
+    - [Accuracy Metrics - Single Classifier](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#accuracy-metrics---single-classifier)
+    - [Changing the Active Classifier](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#changing-the-active-classifier)
+    - [Deleting a Classifier](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#deleting-a-classifier)
+  - [Training a Classifier](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#training-a-classifier)
+    - [Retraining a Classifier](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#retraining-a-classifier)
+      - [Keyword and Training Data Changes](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#keyword-and-training-data-changes)
+      - [Feature Extraction Changes](https://github.com/wesleyraptor/streamingphish/wiki/CLI-Utility#feature-extraction-changes)
+- [General Implementation Information](https://github.com/wesleyraptor/streamingphish/wiki/Home/#general-implementation-information)
+  - [Checking Container State](https://github.com/wesleyraptor/streamingphish/wiki/Home/#checking-container-state)
+  - [Stopping Containers](https://github.com/wesleyraptor/streamingphish/wiki/Home/#stopping-containers)
+  - [Configuration](https://github.com/wesleyraptor/streamingphish/wiki/Home/#configuration)
+  - [Training Data](https://github.com/wesleyraptor/streamingphish/wiki/Home/#training-data)
+  - [Phishing Predictions from CertStream](https://github.com/wesleyraptor/streamingphish/wiki/Home/#phishing-predictions-from-certstream)
+
 
 ## Components
 
