@@ -6,6 +6,8 @@ Also included is a Jupyter notebook to help explain each step of the supervised 
 
 ## Overview
 
+![StreamingPhish Diagram](jupyter/notebooks/images/streamingphish_diagram.png)
+
 This application consists of three main components:
 
 ### Jupyter notebook
