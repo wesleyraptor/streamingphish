@@ -10,13 +10,11 @@ Also included is a Jupyter notebook to help explain each step of the supervised 
 
 This application consists of three main components:
 
-### Jupyter notebook
+- Jupyter notebook
   - Demonstrates how to train a phishing classifier from start to finish.
-  
-### CLI utility
+- CLI utility
   - Trains classifiers and evaluates domains in manual mode or against the Certificate Transparency log network (via certstream).
-  
-### Database
+- Database
   - Stores trained classifiers, performance metrics, and code for feature extraction.
 
 Each segment has been functionally decomposed into its own Docker container. The application is designed to be built and operated via Docker Compose.
