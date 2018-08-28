@@ -217,7 +217,6 @@ class PhishPredictor:
                         result['host'] = host
                         result['score'] = score
                         self._print_result(result)
-
                         # Break, we don't need to iterate through any more thresholds.
                         break
 

@@ -69,27 +69,13 @@ class PhishFeatures:
             fqdn (string): FQDN with common benign hosts removed (these hosts have no bearing
                 on malicious/benign determination).
         """
-        try:
-            first_host = fqdn.split(".")[0]
-        except IndexError:
-            # In the event the FQDN doesn't have any periods?
-            # This would only happen in manual mode.
-            return fqdn
+        fqdn_parts = fqdn.split(".", 1)
+        common_hosts = ["*", "www", "mail", "cpanel", "webmail",
+                        "webdisk", "autodiscover"]
 
-        if first_host == "*":
-            fqdn = fqdn[2:]
-        elif first_host == "www":
-            fqdn = fqdn[4:]
-        elif first_host == "mail":
-            fqdn = fqdn[5:]
-        elif first_host == "cpanel":
-            fqdn = fqdn[7:]
-        elif first_host == "webmail":
-            fqdn = fqdn[8:]
-        elif first_host == "webdisk":
-            fqdn = fqdn[8:]
-        elif first_host == "autodiscover":
-            fqdn = fqdn[13:]
+        if len(fqdn_parts) > 1:
+            if fqdn_parts[0] in common_hosts:
+                return fqdn_parts[1]
 
         return fqdn
 

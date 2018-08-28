@@ -24,7 +24,7 @@ __license__ = "Apache 2.0"
 
 import pickle
 import tqdm
-from pymongo import MongoClient
+import pymongo
 
 # "db" comes from the "db" service in docker-compose.yml.
 DB_HOST = 'db'
@@ -44,7 +44,7 @@ class PhishDB:
     """
 
     def __init__(self):
-        self._db_connection = MongoClient(DB_HOST, DB_PORT)
+        self._db_connection = pymongo.MongoClient(DB_HOST, DB_PORT)
         self._phishing_db = self._db_connection[DB_NAME]
         self._classifiers = self._phishing_db[CLASSIFIERS]
 

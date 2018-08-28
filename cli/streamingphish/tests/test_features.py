@@ -84,7 +84,6 @@ def test_num_periods(features, sample):
     (['google.com', 'reddit.com'], False, ['values', 'names'])
 ])
 def test_compute_values_only(features, fqdns, flag, expected):
-    fqdns = ['www.espn.com', 'com-apple.id.iforgot.whooodat.io']
     result = features.compute_features(fqdns=fqdns, values_only=flag)
     assert all([x in result.keys() for x in expected])
 

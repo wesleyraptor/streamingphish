@@ -17,7 +17,7 @@ WORKDIR /tmp/source/
 
 # Run unit tests.
 RUN find . -name '*.pyc' -delete
-RUN pytest -s --cov=streamingphish
+RUN pytest -s --cov-report term-missing --cov=streamingphish
 
 # Install.
 RUN python3 setup.py install

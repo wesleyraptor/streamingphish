@@ -5,7 +5,7 @@ certstream:
   include_root_ca_name: false
   include_seen_timestamp: false
 classifier:
-  active: final
+  active: initial_v1
 data:
   benign_dir: /opt/streamingphish/training_data/benign/
   fqdn_keywords_dir: /opt/streamingphish/training_data/fqdn_keywords/
