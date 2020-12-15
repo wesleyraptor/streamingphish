@@ -1,6 +1,7 @@
 # Install on ubuntu.
 FROM ubuntu:16.04
-RUN apt-get update; apt-get -y upgrade
+RUN apt-get update -y; apt-get -y upgrade
+RUN apt-get install -y apt-utils
 RUN apt-get install -y mongodb mongodb-server
 
 # Create default data directory.
