@@ -61,7 +61,6 @@ class PhishPredictor:
         self._colors_enabled = self._phish_config.config['certstream']['colors']
         self._seen_timestamp = self._phish_config.config['certstream']['include_seen_timestamp']
         self._issuer_ca = self._phish_config.config['certstream']['include_issuer_ca_name']
-        self._root_ca = self._phish_config.config['certstream']['include_root_ca_name']
         self._certstream_log_source = self._phish_config.config['certstream']['include_log_source']
 
         # If logging is enabled and log path directory doesn't exist, make it.
@@ -102,7 +101,7 @@ class PhishPredictor:
         elif mode == 'certstream':
             # Launch certstream.
             tqdm.tqdm.write("[*] Analysis started - press CTRL+C to quit at anytime.")
-            certstream.listen_for_events(self._certstream_mode)
+            certstream.listen_for_events(self._certstream_mode, url='wss://certstream.calidog.io/')
         else:
             raise ValueError("Invalid mode selected - please choose 'manual' or 'certstream'.")
 
@@ -127,16 +126,11 @@ class PhishPredictor:
         if self._certstream_log_source:
             general_info.append("[{}]".format(output['message']['data']['source']['name']))
 
-        if self._root_ca:
-            # Last item in list should be root CA.
-            general_info.append("[{}]".format(
-                output['message']['data']['chain'][-1]['subject']['O']))
-
         if self._issuer_ca:
             # First item in list should be issuing CA. Could also get this from
             # the actual leaf certificate.
             general_info.append("[{}]".format(
-                output['message']['data']['chain'][0]['subject']['O']))
+                output['message']['data']['leaf_cert']['issuer']['O']))
 
         if general_info:
             if self._colors_enabled:

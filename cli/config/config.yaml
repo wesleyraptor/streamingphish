@@ -2,7 +2,6 @@ certstream:
   colors: true
   include_issuer_ca_name: true
   include_log_source: false
-  include_root_ca_name: false
   include_seen_timestamp: false
 classifier:
   active: initial_v1
