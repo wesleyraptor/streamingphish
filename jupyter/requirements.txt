@@ -30,7 +30,7 @@ pandocfilters==1.4.2
 parso==0.1.1
 pexpect==4.4.0
 pickleshare==0.7.4
-Pillow==5.0.0
+Pillow==8.2.0
 prompt-toolkit==1.0.15
 ptyprocess==0.5.2
 Pygments==2.2.0
