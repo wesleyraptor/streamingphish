@@ -1,5 +1,5 @@
 # Base image and deps.
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 RUN apt-get update; apt-get -y upgrade
 RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
