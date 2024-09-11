@@ -48,7 +48,7 @@ class PhishConfig:
             config (dictionary): Configuration for scoring, classifiers, logging, etc.
         """
         with open(CONFIG_PATH) as yamlfile:
-            config = yaml.load(yamlfile)
+            config = yaml.load(yamlfile, Loader=yaml.SafeLoader)
         return config
 
     def _save_config(self):

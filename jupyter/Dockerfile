@@ -1,11 +1,8 @@
-# Base image and deps.
-FROM ubuntu:18.04
-RUN apt-get update; apt-get -y upgrade
-RUN apt-get install -y python3-pip
-RUN pip3 install --upgrade pip
+# Build from python3.9 base image.
+FROM python:3.9
 
-# Install Jupyter.
-RUN pip3 install jupyterlab
+# Fix issue with setuptools.
+RUN pip install setuptools==45
 
 # Install preqeqs for content in Jupyter notebook.
 ADD requirements.txt /tmp/requirements.txt

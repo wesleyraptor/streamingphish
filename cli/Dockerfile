@@ -1,8 +1,8 @@
-# Build from base image and install prereqs from repo.
-FROM ubuntu:18.04
-RUN apt-get update; apt-get -y upgrade
-RUN apt-get install -y python3-pip
-RUN pip3 install --upgrade pip setuptools
+# Build from python3.9 base image.
+FROM python:3.9
+
+# Fix issue with setuptools.
+RUN pip install setuptools==45
 
 # Install framework requirements.
 ADD requirements.txt /tmp/requirements.txt

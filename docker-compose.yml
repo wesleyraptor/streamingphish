@@ -10,11 +10,11 @@ services:
     ports:
       - "9000:9000"
   db:
-    image: phish-db
-    build:
-      context: db/
+    image: mongo:7.0
     ports:
       - "27017:27017"
+    volumes:
+      - dbdata7:/data/db
   cli:
     image: phish-cli
     build:
@@ -28,3 +28,4 @@ services:
 volumes:
   training_data:
   notebooks:
+  dbdata7:

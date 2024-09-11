@@ -82,7 +82,7 @@ class PhishTrainer:
 
         # Convert labels list to numpy array. Assigning to self because I need to compute how
         # many samples from each class were present in _compute_metrics.
-        self._labels = np.fromiter(labels_list, dtype=np.float)
+        self._labels = np.fromiter(labels_list, dtype=float)
 
         # Split training data from evaluation data. Assigning to class object because we'll use them
         # to help compute metrics against the classifier we're about to train.

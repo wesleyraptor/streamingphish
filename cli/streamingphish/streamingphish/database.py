@@ -135,5 +135,5 @@ class PhishDB:
         Returns:
             result (decoded bytes): Could be Index(), PhishFeatures(), LogisticRegression()
         """
-        result = pickle.loads(data=blob, encoding='bytes')
+        result = pickle.loads(blob, encoding='bytes')
         return result
